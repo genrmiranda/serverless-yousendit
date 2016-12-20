@@ -1,0 +1,9 @@
+{
+  "accessKeyId": "[YOUR-ACCESS-KEY]", 
+  "secretAccessKey": "[SECRET-KEY]",
+  "region": "[BUCKET-REGION]",
+  "bucket": "[BUCKET-NAME]",
+  "apiKey": "[API-GATEWAY-KEY]",
+  "apiSendFileURL": "[API-GATEWAY-URL]",
+  "SESEmailFrom": "mailer@[YOUR-DOMAIN]"
+}
