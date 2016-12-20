@@ -42,7 +42,7 @@ Share files securely and privately using AWS Microservices: S3, Lambda, API Gate
     </CORSRule>
 </CORSConfiguration>
 ```
-* Add Lifecycle rule on the bucket to delete "uploads/" folder after 2 days. (Optional)
+* Add Lifecycle rule on the bucket to delete contents of "uploads/" folder after 2 days of each content. (Optional)
 
 #### Setup your domain's DNS to use the new S3 Bucket
 http://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html 
