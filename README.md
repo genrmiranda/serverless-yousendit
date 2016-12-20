@@ -123,7 +123,9 @@ error.html
     ├── app.js
     ├── aws-sdk-2.7.13.min.js   
 ```
-* Done!
+
+* Done
+
 ### Automated setup using CloudFormation
 > Coming Soon!
 
