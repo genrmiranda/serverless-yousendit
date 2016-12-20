@@ -4,12 +4,12 @@ Share files securely and privately using AWS Microservices: S3, Lambda, API Gate
 ### [Try Demo Website](http://you-send-it.genrmiranda.com/)
 ### 
 ### Installation & Setup
-##### Setup S3 bucket to host your website:
-1. Create bucket name as FQDN. (example you-send-it.genrmiranda.com)
-2. Enable Static Website Hosting on your bucket.
+#### Setup S3 bucket to host your website:
+* Create bucket name as FQDN. (example you-send-it.genrmiranda.com)
+* Enable Static Website Hosting on your bucket.
     Index Document : index.html
     Error Document : error.html
-3. Edit bucket policy.
+* Edit bucket policy.
 ```json
 {
   "Version": "2012-10-17",
@@ -24,7 +24,7 @@ Share files securely and privately using AWS Microservices: S3, Lambda, API Gate
   ]
 }
 ```
-4. Edit CORS Configuration.
+* Edit CORS Configuration.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
@@ -42,16 +42,16 @@ Share files securely and privately using AWS Microservices: S3, Lambda, API Gate
     </CORSRule>
 </CORSConfiguration>
 ```
-5. Add Lifecycle rule on the bucket to delete "uploads/" folder after 2 days. (Optional)
+* Add Lifecycle rule on the bucket to delete "uploads/" folder after 2 days. (Optional)
 
-##### Setup your domain's DNS to use the new S3 Bucket
+#### Setup your domain's DNS to use the new S3 Bucket
 http://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html 
 
-##### Signup and Setup AWS SES for your domain
+#### Signup and Setup AWS SES for your domain
 http://docs.aws.amazon.com/ses/latest/DeveloperGuide/setting-up-email.html
 
-##### Create IAM User Credentials and policy:
-1. Create an IAM Policy
+#### Create IAM User Credentials and policy:
+* Create an IAM Policy
 ```json
 {
     "Version": "2012-10-17",
@@ -90,19 +90,19 @@ http://docs.aws.amazon.com/ses/latest/DeveloperGuide/setting-up-email.html
     ]
 }
 ```
-2. Create a new IAM User with "Programmatic Access" and attach policy created above.
-3. Create Access Keys on the newly created IAM user. Download/Save AccessID and SecretAccess keys
+* Create a new IAM User with "Programmatic Access" and attach policy created above.
+* Create Access Keys on the newly created IAM user. Download/Save AccessID and SecretAccess keys
 
-##### Setup Lambda and API Gateway
+#### Setup Lambda and API Gateway
  http://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started.html
  * Setup your lambda and API Gateway in either us-east-1, us-west-2 or eu-west-1 because SES is available in these regions.
  * Use the code in export.js for your lambda function
  
-##### Signup and Setup AWS SES for your domain
+#### Signup and Setup AWS SES for your domain
 http://docs.aws.amazon.com/ses/latest/DeveloperGuide/setting-up-email.html
 
-#### Configure and upload the website in your bucket 
-1. edit js/config.json
+### Configure and upload the website in your bucket 
+* edit js/config.json
 ```json
 {
   "accessKeyId": "[YOUR-ACCESS-KEY]", 
@@ -114,7 +114,7 @@ http://docs.aws.amazon.com/ses/latest/DeveloperGuide/setting-up-email.html
   "SESEmailFrom": "mailer@[YOUR-DOMAIN]"
 }
 ```
-2. Upload the following files on your new bucket
+* Upload the following files on your new bucket
 ```
 index.html
 error.html
@@ -123,9 +123,9 @@ error.html
     ├── app.js
     ├── aws-sdk-2.7.13.min.js   
 ```
-3. Done!
- ### Automated setup using CloudFormation
- > Coming Soon!
+* Done!
+### Automated setup using CloudFormation
+> Coming Soon!
 
 
 
